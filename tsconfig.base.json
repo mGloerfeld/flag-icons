@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@org/flag-icons-lib": ["libs/flag-icons-lib/src/index.ts"],
+      "@org/flag-icons-lit": ["libs/flag-icons-lit/src/index.ts"],
       "@org/flagg-icons": ["flagg-icons/src/index.ts"]
     }
   },

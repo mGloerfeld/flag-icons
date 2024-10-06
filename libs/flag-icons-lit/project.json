@@ -1,0 +1,19 @@
+{
+  "name": "flag-icons-lit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/flag-icons-lit/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/flag-icons-lit",
+        "main": "libs/flag-icons-lit/src/index.ts",
+        "tsConfig": "libs/flag-icons-lit/tsconfig.lib.json",
+        "assets": ["libs/flag-icons-lit/*.md"]
+      }
+    }
+  }
+}
