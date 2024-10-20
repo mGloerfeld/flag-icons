@@ -9,9 +9,17 @@
     "@nx/eslint": "19.8.4",
     "@nx/eslint-plugin": "19.8.4",
     "@nx/js": "19.8.4",
+    "@nx/storybook": "^19.8.4",
     "@nx/vite": "^19.8.4",
     "@nx/web": "19.8.4",
     "@nx/workspace": "19.8.4",
+    "@storybook/addon-essentials": "^8.2.8",
+    "@storybook/addon-interactions": "^8.2.8",
+    "@storybook/core-server": "^8.2.8",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/web-components-vite": "^8.2.8",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
@@ -22,6 +30,8 @@
     "eslint-config-prettier": "^9.0.0",
     "nx": "19.8.4",
     "prettier": "^2.6.2",
+    "storybook": "^8.2.8",
+    "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "~5.5.2",
     "typescript-eslint": "^8.0.0",
@@ -30,6 +40,8 @@
     "vitest": "^1.3.1"
   },
   "dependencies": {
-    "lit": "^3.2.0"
+    "lit": "^3.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

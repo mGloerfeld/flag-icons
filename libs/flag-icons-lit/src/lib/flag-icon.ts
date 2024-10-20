@@ -1,17 +1,16 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { flags } from "@globecruising/flag-icons-lib"
 
-@customElement('flag')
+@customElement('flag-icon')
 export class SimpleGreeting extends LitElement {
 
     static override styles = css`p { color: blue }`;
 
     @property()
-    country = '';
+    country: flags = "germany" as flags;
 
     override render() {
-
-        if (this.country == "") { throw new Error("Country property must be set.") }
 
         return html`<p>Hello, ${this.country}!</p>`;
     }
