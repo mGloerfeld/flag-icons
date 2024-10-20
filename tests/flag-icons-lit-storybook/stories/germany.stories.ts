@@ -12,5 +12,5 @@ export default meta;
 type Story = StoryObj;
 
 export const Primary: Story = {
-    render: () => html`<flag-icon></flag-icon>`,
+    render: () => html`<flag-icon country="swiss"></flag-icon>`,
 };
