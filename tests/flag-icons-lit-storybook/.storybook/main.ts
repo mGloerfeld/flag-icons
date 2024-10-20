@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/web-components-vite';
 
 const config: StorybookConfig = {
   stories: [
-    '../src/stories/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
+    '../stories/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
   ],
   addons: [
     '@storybook/addon-essentials',
@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     name: '@storybook/web-components-vite',
     options: {
       builder: {
-        viteConfigPath: 'vite.config.ts',
+        viteConfigPath: 'tests/flag-icons-lit-storybook/vite.config.ts',
       },
     },
   },

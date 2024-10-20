@@ -12,6 +12,6 @@ export class SimpleGreeting extends LitElement {
 
     override render() {
 
-        return html`<p>Hello, ${this.country}!</p>`;
+        return html`<p>Hello, 2 ${this.country}!</p>`;
     }
 }
