@@ -1,17 +1,26 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { flags } from "@globecruising/flag-icons-lib"
+import { flags } from "@globecruising/flag-icons-core"
+import { fStyles } from "@globecruising/flag-icons-core"
+
 
 @customElement('flag-icon')
 export class SimpleGreeting extends LitElement {
 
-    static override styles = css`p { color: blue }`;
+    @property()
+    classes = { size: true, anotherclass: true };
 
     @property()
     country: flags = "germany" as flags;
 
-    override render() {
+    static override styles = [
+        fStyles,
+        css`
+          
+      `];
 
-        return html`<p>Hello, 2 ${this.country}!</p>`;
+    override render() {
+        console.log(fStyles)
+        return html`<p class="blue-button">Hello, 2 ${this.country}!</p>`;
     }
 }

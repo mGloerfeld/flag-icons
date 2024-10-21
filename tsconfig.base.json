@@ -18,14 +18,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@globecruising/flag-icons-lib": [
-        "libs/flag-icons-lib/src/index.ts"
+      "@globecruising/flag-icons-core": [
+        "libs/flag-icons-core/src/index.ts"
       ],
       "@globecruising/flag-icons-lit": [
         "libs/flag-icons-lit/src/index.ts"
-      ],
-      "@globecruising/flagg-icons": [
-        "flagg-icons/src/index.ts"
       ]
     }
   },

@@ -30,6 +30,7 @@
     "eslint-config-prettier": "^9.0.0",
     "nx": "19.8.4",
     "prettier": "^2.6.2",
+    "sass": "^1.80.3",
     "storybook": "^8.2.8",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
