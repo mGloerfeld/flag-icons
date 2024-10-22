@@ -7,6 +7,8 @@ import { fStyles } from "@globecruising/flag-icons-core"
 @customElement('flag-icon')
 export class SimpleGreeting extends LitElement {
 
+    @property({ reflect: true }) class: any
+
     @property()
     classes = { size: true, anotherclass: true };
 
@@ -14,9 +16,15 @@ export class SimpleGreeting extends LitElement {
     country: flags = "germany" as flags;
 
     static override styles = [
-        fStyles,
+
         css`
-          
+          :host {
+            background-color: yellow;
+ 
+        }
+
+
+
       `];
 
     override render() {

@@ -1,9 +1,13 @@
 {
-  "name": "@org/flag-icons-lib",
+  "name": "@globecruising/flag-icons-core",
   "version": "0.0.1",
   "dependencies": {},
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts",
-  "private": true
+  "private": true,
+  "exports": {
+    ".": "./dist/index.js",
+    "./styles": "./src/lib/scss/index.scss"
+  }
 }
