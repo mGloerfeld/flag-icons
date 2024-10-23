@@ -1,4 +1,4 @@
 export enum flags {
-    Germany = "germany",
-    France = "france"
+    germany = "Germany",
+    france = "France"
 }
