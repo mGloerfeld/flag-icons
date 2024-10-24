@@ -3,6 +3,7 @@ import { html } from 'lit';
 
 import "../../../libs/flag-icons-lit/src/lib/germany-flag-icon"
 
+
 const meta: Meta = {
 
     component: "GermanyFlagIcon",
@@ -10,26 +11,24 @@ const meta: Meta = {
     argTypes: {
         width: {
             name: "width",
-            type: 'number',
+            control: 'number',
             description: 'width in px',
         },
-
-
-        color1: {
-            name: "color 1",
+        primum: {
+            name: "color primum",
             control: 'color',
             description: 'color as hex',
         },
-        color2: {
-            name: "color 2",
+        secundo: {
+            name: "color secundo",
             control: 'color',
             description: 'color as hex',
         },
-        color3: {
-            name: "color 3",
+        tertius: {
+            name: "color tertius",
             control: 'color',
             description: 'color as hex',
-        },
+        }
     }
 };
 
@@ -39,12 +38,12 @@ type Story = StoryObj;
 
 export const primary: Story = {
     args: {
-        width: 250,
-        color1: "#333333",
-        color2: "#ababab",
-        color3: "#555555",
+        width: 200,
+        primum: "#be8c8c",
+        secundo: "#ff0000",
+        tertius: "#ffcc00",
     },
     render:
-        ({ width, color1, color2, color3 }) =>
-            html`<flag-icon-germany colors="${color1},${color2},${color3}" style="display:block; width:${width}px" class="flag-icon"></flag-icon-germany>`
+        ({ width, primum, secundo, tertius }) =>
+            html`<flag-icon-germany colors="${primum},${secundo},${tertius}" style="display:block; width:${width}px" class="flag-icon germany"></flag-icon-germany>`
 };

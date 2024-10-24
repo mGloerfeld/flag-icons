@@ -6,16 +6,8 @@ import { BaseFlagIcon } from './base-flag-icon';
 @customElement('flag-icon-germany')
 class GermanyFlagIcon extends LitElement {
 
-    static override get properties() {
-        return {
-            greeting: { type: String },
-            data: { attribute: false },
-            items: { type: Array },
-        };
-    }
-
-    @property()
-    width = "second";
+    @property({ type: String })
+    width = "200px";
 
     @property()
     classes = { size: true, anotherclass: true };
@@ -26,25 +18,34 @@ class GermanyFlagIcon extends LitElement {
     static override styles = [
 
         css`
-         .black { fill: var(--my-color, black); }
+       
+          .primum {
+                fill: var(--color-primum);
+            }
+           .secundo {
+                fill: var(--color-secundo);
+            }
+            .tertius {
+                fill: var(--color-tertius);
+            }
+           
       `];
+
 
     override render() {
 
         let svg = new BaseFlagIcon().getElement()
-        let pathes: any[] = [];
 
         for (let item of germany.gometry) {
+
 
             let el = document.createElementNS('http://www.w3.org/2000/svg', "path");
 
             el.setAttribute("d", item.path)
-            el.setAttribute("class", item.cssClass)
+            el.setAttribute("class", `${germany.title} ${item.type}`)
 
             svg.appendChild(el);
-
         }
-
         return svg;
     }
 }

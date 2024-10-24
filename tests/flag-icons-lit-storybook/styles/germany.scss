@@ -1,0 +1,19 @@
+$primum-color: #000000;
+$secundo-color: #ff0000;
+$tertius-color: #ffcc00;
+
+.flag-icon.germany {
+  --color-primum: #{$primum-color};
+  --color-secundo: #{$secundo-color};
+  --color-tertius: #{$tertius-color};
+
+  // .primum {
+  //   fill: var(--color-primum);
+  // }
+  // .secundo {
+  //   fill: var(--color-secundo);
+  // }
+  // .tertius {
+  //   fill: var(--color-tertius);
+  // }
+}
