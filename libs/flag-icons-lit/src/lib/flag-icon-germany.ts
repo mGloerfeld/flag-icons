@@ -1,10 +1,10 @@
 import { css, html, LitElement } from 'lit';
-import { BaseFlagIcon } from './base-flag-icon';
+import { FlagIconBase } from './flag-icon-base';
 import { germany } from '@globecruising/flag-icons-core';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('flag-icon-germany')
-export class GermanyFlagIcon extends BaseFlagIcon {
+export class FlagIconGermany extends FlagIconBase {
 
     name = "Matthias";
 
