@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true,
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "types": [
@@ -15,6 +14,8 @@
   "exclude": [
     "vite.config.ts",
     "src/**/*.spec.ts",
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js"
   ]
 }

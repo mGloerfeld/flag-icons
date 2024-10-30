@@ -1,23 +1,25 @@
+import { config } from "./utils/config.js";
 
 
 export const germany = {
     title: "germany",
+    ration: 0.6667,
     gometry:
         [
             {
-                type: "primum",
+                order: config.germany.gold.rank,
                 path: "M-0.2 0h180v45H-0.2Z",
-                color: "#00000"
+                color: config.germany.black.color
             },
             {
-                type: "secundo",
+                order: config.germany.gold.rank,
                 path: "M-0.2 44.9h180v45H-0.2Z",
-                color: "#ff0000"
+                color: config.germany.red.color
             },
             {
-                type: "tertius",
+                order: config.germany.gold.rank,
                 path: "M-0.2 89.9h180v45H-0.2Z",
-                color: "#ffcc00"
+                color: config.germany.gold.color
             }
         ]
 };

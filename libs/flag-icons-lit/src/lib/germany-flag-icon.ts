@@ -1,24 +1,21 @@
-import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { flags, germany } from "@globecruising/flag-icons-core"
+import { css, html, LitElement } from 'lit';
 import { BaseFlagIcon } from './base-flag-icon';
+import { germany } from '@globecruising/flag-icons-core';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('flag-icon-germany')
-class GermanyFlagIcon extends LitElement {
+export class GermanyFlagIcon extends BaseFlagIcon {
 
-    @property({ type: String })
-    width = "200px";
+    name = "Matthias";
 
     @property()
     classes = { size: true, anotherclass: true };
 
-    @property()
-    country: flags = flags.germany;
+    svgEl: any;
 
     static override styles = [
 
         css`
-       
           .primum {
                 fill: var(--color-primum);
             }
@@ -28,26 +25,21 @@ class GermanyFlagIcon extends LitElement {
             .tertius {
                 fill: var(--color-tertius);
             }
-           
       `];
-
 
     override render() {
 
-        let svg = new BaseFlagIcon().getElement()
+        this.svgEl = this.getSVGElement()
 
         for (let item of germany.gometry) {
-
 
             let el = document.createElementNS('http://www.w3.org/2000/svg', "path");
 
             el.setAttribute("d", item.path)
-            el.setAttribute("class", `${germany.title} ${item.type}`)
+            el.setAttribute("class", `${germany.title} ${this.width * (1 + germany.ration)} `)
 
-            svg.appendChild(el);
+            this.getSVGElement().appendChild(el);
         }
-        return svg;
+        return this.getSVGElement();
     }
 }
-
-export default GermanyFlagIcon;

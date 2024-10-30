@@ -1,1 +1,1 @@
-export * from './lib/base-flag-icon';
+export * from './lib/germany-flag-icon';

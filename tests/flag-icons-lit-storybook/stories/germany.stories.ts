@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
+import { customElement, property } from "lit/decorators.js";
 
 import "../../../libs/flag-icons-lit/src/lib/germany-flag-icon"
 
@@ -45,5 +46,5 @@ export const primary: Story = {
     },
     render:
         ({ width, primum, secundo, tertius }) =>
-            html`<flag-icon-germany colors="${primum},${secundo},${tertius}" style="display:block; width:${width}px" class="flag-icon germany"></flag-icon-germany>`
+            html`<flag-icon-germany   class="flag-icon germany"></flag-icon-germany>`
 };
