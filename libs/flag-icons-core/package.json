@@ -1,0 +1,10 @@
+{
+  "name": "@globecruising/flag-icons-core",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "private": true,
+  "exports": {
+    "./styles": "./src/lib/scss/index.scss"
+  }
+}

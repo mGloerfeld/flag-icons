@@ -6,7 +6,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
     root: __dirname,
-    cacheDir: '../../node_modules/.vite/libs/flag-icons-lit',
+    cacheDir: path.join(__dirname, '../node_modules/.vite/libs/flag-icons-lit'),
 
     plugins: [
         nxViteTsPaths(),
@@ -28,7 +28,7 @@ export default defineConfig({
         rollupOptions: {
             // External packages that should not be bundled into your library.
             external: [
-                "lit"
+                // "lit"
             ],
         }
     }

@@ -1,0 +1,10 @@
+{
+  "name": "@globecruising/flag-icons-lit",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    "./germany": "./src/lib/flag-icon-germany.ts"
+  }
+}

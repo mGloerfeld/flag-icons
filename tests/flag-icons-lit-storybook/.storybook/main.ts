@@ -1,25 +1,28 @@
-import type { StorybookConfig } from '@storybook/web-components-vite';
+import { StorybookConfig } from '@storybook/web-components-vite';
 
 const config: StorybookConfig = {
   stories: [
     '../stories/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
   ],
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-links',
+    '@storybook/addon-essentials'
   ],
-  framework: {
-    name: '@storybook/web-components-vite',
-    options: {
-      builder: {
-        viteConfigPath: 'tests/flag-icons-lit-storybook/vite.config.ts',
-      },
-    },
+  core: {
+    builder: '@storybook/builder-vite',
   },
+  framework: '@storybook/web-components-vite',
+  async viteFinal(config) {
+    // Merge custom configuration into the default config
+    const { mergeConfig } = await import('vite');
+
+    return mergeConfig(config, {
+      // Add dependencies to pre-optimization
+      optimizeDeps: {
+        include: ['storybook-dark-mode'],
+      },
+    });
+  }
 };
 
 export default config;
-
-// To customize your Vite configuration you can use the viteFinal field.
-// Check https://storybook.js.org/docs/react/builders/vite#configuration
-// and https://nx.dev/recipes/storybook/custom-builder-configs

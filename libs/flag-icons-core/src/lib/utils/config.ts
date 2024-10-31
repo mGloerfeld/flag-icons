@@ -3,18 +3,10 @@
 
 export const config = {
     germany: {
-        black: {
-            color: "#000000",
-            rank: 1
-        },
-        red: {
-            color: "#ff0000",
-            rank: 2
-        },
-        gold: {
-            color: "#ffcc00",
-            rank: 3
-        }
+        black: "#000000",
+        red: "#ff0000",
+        gold: "#ffcc00"
+
     }
 }
 

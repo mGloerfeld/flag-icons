@@ -2,13 +2,28 @@ import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
 import { customElement, property } from "lit/decorators.js";
 
-import "../../../libs/flag-icons-lit/src/lib/germany-flag-icon"
-
+import "../../../libs/flag-icons-lit/src/lib/flag-icon-germany"
 
 const meta: Meta = {
 
-    component: "GermanyFlagIcon",
-    // decorators: [(story) => html`<div style="margin: 3rem">${story()}</div>`],
+    title: 'Flags of the world/minimal/Germany',
+    component: "FlagIconGermany",
+    tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj;
+
+
+export const Base: Story = {
+    name: "Minimal",
+    render:
+        () =>
+            html`<flag-icon class="flag-icon germany"></flag-icon-germany>`
+};
+
+export const Custom: Story = {
+    name: "Custom colors",
     argTypes: {
         width: {
             name: "width",
@@ -30,14 +45,7 @@ const meta: Meta = {
             control: 'color',
             description: 'color as hex',
         }
-    }
-};
-
-export default meta;
-type Story = StoryObj;
-
-
-export const primary: Story = {
+    },
     args: {
         width: 200,
         primum: "#be8c8c",
@@ -46,5 +54,5 @@ export const primary: Story = {
     },
     render:
         ({ width, primum, secundo, tertius }) =>
-            html`<flag-icon-germany   class="flag-icon germany"></flag-icon-germany>`
+            html`<flag-icon width="${width}" colorPrimum="${primum}" colorSecundo="${secundo}" colorTertius="${tertius}"  class="flag-icon germany"></flag-icon-germany>`
 };

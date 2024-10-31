@@ -1,4 +1,4 @@
-import { LitElement } from "lit";
+import { css, CSSResultGroup, LitElement } from "lit";
 import { customElement, property } from 'lit/decorators.js';
 
 
@@ -8,22 +8,34 @@ class FlagIconBase extends LitElement {
     width = 200;
 
     @property({ type: Number })
-    height = 0;
+    height?: number;
 
-    svg: SVGElement;
+    @property({ type: String, })
+    accessor colorPrimus = "#000000";
+
+    @property({ type: String, })
+    accessor colorSecundo = "#000000";
+
+    private svg: SVGElement;
+
+    static override styles =
+        css` 
+        :host {
+            display:block;
+            width: 200px;
+            overflow:hidden;
+         }` as CSSResultGroup;
 
     constructor() {
         super();
 
         this.svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg')
-        this.svg.setAttributeNS("xml", "space", "preserve");
-        this.svg.setAttribute("x", "0px");
-        this.svg.setAttribute("y", "0px");
     }
 
     public getSVGElement() {
         return this.svg;
     }
+
 }
 
 export { FlagIconBase }

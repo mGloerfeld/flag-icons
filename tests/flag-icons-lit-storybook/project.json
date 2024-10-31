@@ -25,11 +25,7 @@
         "port": 4400,
         "configDir": "tests/flag-icons-lit-storybook/.storybook"
       },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
+      "configurations": {}
     },
     "build-storybook": {
       "executor": "@nx/storybook:build",
@@ -40,17 +36,7 @@
         "outputDir": "dist/storybook/flag-icons-lit-storybook",
         "configDir": "tests/flag-icons-lit-storybook/.storybook"
       },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "test-storybook": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "test-storybook -c tests/flag-icons-lit-storybook/.storybook --url=http://localhost:4400"
-      }
+      "configurations": {}
     }
   }
 }
