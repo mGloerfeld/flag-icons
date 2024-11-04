@@ -5,6 +5,9 @@
   "main": "./src/index.ts",
   "private": true,
   "exports": {
-    "./styles": "./src/lib/scss/index.scss"
+    "./styles": "./src/lib/scss/index.scss",
+    "./national": "./src/lib/military",
+    "./military": "./src/lib/national",
+    "./config": "./flag-icons-config"
   }
 }

@@ -1,12 +1,10 @@
-export interface flag {
 
-    title: string,
+import { Geometry } from "./geometry"
+
+export interface Flag {
+    name: string,
     with: number,
     height: number
-    geometries: Record<string, geometry>
+    geometries: Record<number, Geometry>
 }
 
-interface geometry {
-    path: string,
-    color: string
-}

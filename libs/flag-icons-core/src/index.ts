@@ -1,3 +1,4 @@
-export { germany } from './lib/germany';
-export * from './lib/utils/country';
+
+export * from './lib/national';
+export * from './lib/military';
 
