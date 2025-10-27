@@ -1,7 +1,7 @@
 {
   "name": "flag-icons-core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/flag-icons-core/src",
+  "sourceRoot": "libs/flag-icons-core",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -11,9 +11,10 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/libs/flag-icons-core",
-        "main": "libs/flag-icons-core/src/index.ts",
-        "tsConfig": "libs/flag-icons-core/tsconfig.lib.json",
+        "configFile": "{projectRoot}/vite.config.ts",
+        "outputPath": "{projectRoot}/dist/flag-icons-core",
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.lib.json",
         "assets": [
           "libs/flag-icons-core/*.md"
         ]

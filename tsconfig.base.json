@@ -20,7 +20,8 @@
     "baseUrl": ".",
     "paths": {
       "@globecruising/flag-icons-core": [
-        "libs/flag-icons-core/src/index.ts"
+        "libs/flag-icons-core/src/index.ts",
+        "libs/flag-icons-core/src/lib/germany/index.ts"
       ],
       "@globecruising/flag-icons-lit": [
         "libs/flag-icons-lit/src/index.ts"

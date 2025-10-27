@@ -2,12 +2,10 @@
   "name": "@globecruising/flag-icons-core",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "./src/index.ts",
-  "private": true,
   "exports": {
+    ".": "./src/index.ts",
     "./styles": "./src/lib/scss/index.scss",
-    "./national": "./src/lib/military",
-    "./military": "./src/lib/national",
-    "./config": "./flag-icons-config"
+    "./flags": "./src/index.ts",
+    "./flag/germany": "./src/lib/germany/index.ts"
   }
 }

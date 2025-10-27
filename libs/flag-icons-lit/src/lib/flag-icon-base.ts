@@ -2,7 +2,7 @@ import { css, CSSResultGroup, LitElement } from "lit";
 import { customElement, property } from 'lit/decorators.js';
 
 
-class FlagIconBase extends LitElement {
+class Base extends LitElement {
 
     @property({ type: Number })
     width = 200;
@@ -38,4 +38,4 @@ class FlagIconBase extends LitElement {
 
 }
 
-export { FlagIconBase }
+export { Base }

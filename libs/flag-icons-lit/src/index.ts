@@ -1,1 +1,8 @@
-export { FlagIconGermany } from './lib/flag-icon-germany';
+
+import * as Germany from './lib/germany';
+
+export const Flags = {
+    Germany
+};
+
+

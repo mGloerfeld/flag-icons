@@ -1,10 +1,10 @@
 import { css, html, LitElement } from 'lit';
-import { FlagIconBase } from './flag-icon-base';
+import { Base } from '../flag-icon-base';
 import { germany } from '@globecruising/flag-icons-core';
 import { customElement, property } from 'lit/decorators.js';
 
 @customElement('flag-icon')
-export class FlagIconGermany extends FlagIconBase {
+export class National extends Base {
 
     @property({ type: String })
     colorTertius = "#000000";
@@ -20,7 +20,7 @@ export class FlagIconGermany extends FlagIconBase {
     //         }
 
     static override styles = [
-        FlagIconBase.styles,
+        Base.styles,
         css`div {
             color: red;
         }`
@@ -31,13 +31,13 @@ export class FlagIconGermany extends FlagIconBase {
         let viewbox = this.GetSVGViewBox();
 
 
-        for (let item in germany.geometries) {
+        for (let item in germany.national.geometries) {
 
             this.getSVGElement().setAttribute("viewBox", `0 0 ${viewbox["width"]} ${viewbox["height"]}`)
 
             let el = document.createElementNS('http://www.w3.org/2000/svg', "path");
-            el.setAttribute("d", germany.geometries[item].path)
-            el.setAttribute("fill", `${germany.geometries[item].color}`)
+            el.setAttribute("d", germany.national.geometries[item].path)
+            el.setAttribute("fill", `${germany.national.geometries[item].color}`)
             el.setAttribute("class", `${item} `)
 
             this.getSVGElement().appendChild(el);
@@ -50,15 +50,15 @@ export class FlagIconGermany extends FlagIconBase {
         let dimensions: Record<string, number> = {};
 
         if (this.height) {
-            dimensions["width"] = this.height * (1 + germany.with / germany.height);
+            dimensions["width"] = this.height * (1 + germany.national.with / germany.national.height);
             dimensions["height"] = this.height;
 
         } else if (this.width) {
             dimensions["width"] = this.width;
-            dimensions["height"] = this.width * (germany.with / germany.height);
+            dimensions["height"] = this.width * (germany.national.with / germany.national.height);
         } else {
-            dimensions["width"] = germany.with;
-            dimensions["height"] = germany.height;
+            dimensions["width"] = germany.national.with;
+            dimensions["height"] = germany.national.height;
         }
 
         return dimensions;
