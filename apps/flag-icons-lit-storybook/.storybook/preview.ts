@@ -1,10 +1,18 @@
-// Replace your-framework with the framework you are using (e.g., react, vue3)
-import { Preview } from '@storybook/web-components';
 
-import "../styles/main.s";
+// libs/shared-wc/.storybook/preview.ts
+import type { Preview } from '@storybook/web-components';
 
-const preview: Preview = {
-    parameters: {},
+export const parameters: Preview['parameters'] = {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+        expanded: true,
+        matchers: { color: /(background|color)$/i, date: /Date$/ }
+    },
 };
 
-export default preview;
+export const decorators = [
+    (story: any) => {
+        // Beispiel: globaler Container/Theme
+        return story();
+    }
+];

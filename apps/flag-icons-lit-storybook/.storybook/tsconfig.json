@@ -1,0 +1,19 @@
+{
+    "extends": "../../../tsconfig.base.json",
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "bundler", // wichtig für TS 5 + Vite/ESM
+        "strict": true,
+        "types": [
+            "vite/client",
+            "node"
+        ],
+        "baseUrl": "../../"
+    },
+    "include": [
+        "../src/**/*",
+        "../**/*.stories.ts",
+        "./**/*.ts"
+    ]
+}
