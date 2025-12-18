@@ -1,0 +1,55 @@
+// Flag Color Mixin System
+@mixin flag-colors($colors...) {
+  @for $i from 1 through length($colors) {
+    --flag-color#{$i}: #{nth($colors, $i)};
+  }
+}
+
+@mixin flag-theme($theme-name, $colors...) {
+  &--#{$theme-name} {
+    @include flag-colors($colors...);
+  }
+}
+
+// German Flag Mixin
+@mixin german-flag-colors($black: #000000, $red: #dd0000, $yellow: #ffce00) {
+  --flag-color1: #{$black};
+  --flag-color2: #{$red};
+  --flag-color3: #{$yellow};
+}
+
+// Usage examples
+flag-icon-germany {
+  // Default colors
+  @include german-flag-colors();
+
+  // Custom variants using the mixin
+  @include flag-theme('official', #000000, #dd0000, #ffce00);
+  @include flag-theme('vintage', #2c2c2c, #8b0000, #daa520);
+  @include flag-theme('bright', #000000, #ff0000, #ffff00);
+  @include flag-theme('pastel', #555555, #ff9999, #ffeeaa);
+}
+
+// Alternative: Directly set custom colors
+.custom-german-flag {
+  @include flag-colors(#1a1a1a, #cc0000, #ffaa00);
+}
+
+// Multi-color flags (for complex flags with many colors)
+.complex-flag {
+  @include flag-colors(
+    #ff0000,
+    #ffffff,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #000000,
+    #ffa500,
+    #8b4513,
+    #800080,
+    #808080,
+    #40e0d0,
+    #c0c0c0,
+    #b87333
+  );
+}

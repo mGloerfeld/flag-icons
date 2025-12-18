@@ -1,0 +1,105 @@
+// German Flag Color Variables
+$german-black: #000000;
+$german-red: #dd0000;
+$german-yellow: #ffce00;
+
+// Alternative color themes
+$german-vintage-black: #2c2c2c;
+$german-vintage-red: #8b0000;
+$german-vintage-yellow: #daa520;
+
+// High contrast theme
+$german-hc-black: #000000;
+$german-hc-red: #ff0000;
+$german-hc-yellow: #ffff00;
+
+/**
+ * German Flag Base Styles
+ * Sets up CSS custom properties that can be overridden
+ */
+flag-icon-germany {
+  // Default German flag colors
+  --flag-color1: #{$german-black}; // Schwarz (top stripe)
+  --flag-color2: #{$german-red}; // Rot (middle stripe)
+  --flag-color3: #{$german-yellow}; // Gold (bottom stripe)
+
+  // Additional colors for extended use cases
+  --flag-color4: transparent;
+  --flag-color5: transparent;
+  --flag-color6: transparent;
+
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+}
+
+/**
+ * Theme Variants
+ */
+.german-flag {
+  &--vintage {
+    --flag-color1: #{$german-vintage-black};
+    --flag-color2: #{$german-vintage-red};
+    --flag-color3: #{$german-vintage-yellow};
+    filter: sepia(20%);
+  }
+
+  &--high-contrast {
+    --flag-color1: #{$german-hc-black};
+    --flag-color2: #{$german-hc-red};
+    --flag-color3: #{$german-hc-yellow};
+    filter: contrast(120%);
+  }
+
+  &--grayscale {
+    --flag-color1: #333333;
+    --flag-color2: #666666;
+    --flag-color3: #999999;
+    filter: grayscale(100%);
+  }
+}
+
+/**
+ * Responsive sizing
+ */
+.german-flag {
+  &--small {
+    width: 120px;
+    height: 80px;
+  }
+
+  &--large {
+    width: 600px;
+    height: 400px;
+  }
+
+  &--responsive {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+  }
+}
+
+/**
+ * Interactive states
+ */
+flag-icon-germany {
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.interactive {
+    cursor: pointer;
+
+    &:hover {
+      --flag-color1: #{lighten($german-black, 10%)};
+      --flag-color2: #{lighten($german-red, 10%)};
+      --flag-color3: #{lighten($german-yellow, 10%)};
+    }
+  }
+}

@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3">
-    <path d="M0 0h5v3H0z"/>
-    <path fill="#D00" d="M0 1h5v2H0z"/>
-    <path fill="#FFCE00" d="M0 2h5v1H0z"/>
+<svg data-prefix="gc" data-icon="german flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"
+    class="flag german responsive-flag" role="img" aria-hidden="true" preserveAspectRatio="none"
+    style="width: 100%; height: 100%; max-width: 100%; max-height: 100%; display: block;">
+
+    <path class="color-german-black" fill="var(--color-german-black, #000000)" d="M0 0h5v1H0z" />
+    <path class="color-german-red" fill="var(--color-german-red, #DD0000)" d="M0 1h5v1H0z" />
+    <path class="color-german-yellow" fill="var(--color-german-yellow, #FFCE00)" d="M0 2h5v1H0z" />
 </svg>

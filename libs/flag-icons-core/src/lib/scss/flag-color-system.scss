@@ -1,0 +1,90 @@
+// Color palette definitions
+$flag-colors: (
+  'black': #000000,
+  'white': #ffffff,
+  'red': #dd0000,
+  'blue': #0000ff,
+  'yellow': #ffce00,
+  'green': #00ff00,
+  'orange': #ffa500,
+  'brown': #8b4513,
+  'purple': #800080,
+  'gray': #808080,
+  'turquoise': #40e0d0,
+  'silver': #c0c0c0,
+  'copper': #b87333,
+);
+
+// Country-specific color themes
+$flag-themes: (
+  'germany': (
+    'primary': map-get($flag-colors, 'black'),
+    'secondary': map-get($flag-colors, 'red'),
+    'tertiary': map-get($flag-colors, 'yellow'),
+  ),
+  'france': (
+    'primary': #0055a4,
+    'secondary': map-get($flag-colors, 'white'),
+    'tertiary': #ef4135,
+  ),
+  'italy': (
+    'primary': #00ff00,
+    'secondary': map-get($flag-colors, 'white'),
+    'tertiary': map-get($flag-colors, 'red'),
+  ),
+);
+
+// Function to get color from theme
+@function flag-color($country, $position) {
+  $theme: map-get($flag-themes, $country);
+  @return map-get($theme, $position);
+}
+
+// Mixin to apply country theme
+@mixin apply-flag-theme($country) {
+  --flag-color1: #{flag-color($country, 'primary')};
+  --flag-color2: #{flag-color($country, 'secondary')};
+  --flag-color3: #{flag-color($country, 'tertiary')};
+}
+
+// Usage
+flag-icon-germany {
+  @include apply-flag-theme('germany');
+
+  &.theme-france {
+    @include apply-flag-theme('france');
+  }
+
+  &.theme-italy {
+    @include apply-flag-theme('italy');
+  }
+}
+
+// Alternative: Direct color access
+.german-flag-alternative {
+  --flag-color1: #{map-get($flag-colors, 'black')};
+  --flag-color2: #{map-get($flag-colors, 'red')};
+  --flag-color3: #{map-get($flag-colors, 'yellow')};
+}
+
+// Responsive color adjustments
+@mixin responsive-flag-colors($base-colors, $dark-mode: false) {
+  @if $dark-mode {
+    // Lighten colors for dark mode
+    --flag-color1: #{lighten(nth($base-colors, 1), 20%)};
+    --flag-color2: #{lighten(nth($base-colors, 2), 15%)};
+    --flag-color3: #{lighten(nth($base-colors, 3), 10%)};
+  } @else {
+    // Standard colors
+    --flag-color1: #{nth($base-colors, 1)};
+    --flag-color2: #{nth($base-colors, 2)};
+    --flag-color3: #{nth($base-colors, 3)};
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  flag-icon-germany {
+    @include responsive-flag-colors((#333333, #ff4444, #ffdd44), true);
+  }
+}

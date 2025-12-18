@@ -5,21 +5,21 @@ import { html } from 'lit';
 import '../../../libs/flag-icons-lit/src/lib/germany/index.js';
 
 // Import shared argTypes and args
-import { FlagArgTypes,FlagArgs } from './shared/german-arg-types';
+import { FlagArgTypes, FlagArgs } from './shared/german-arg-types';
 
 const meta: Meta = {
-    title: 'Flags/Germany',
-    component: 'flag-icon-germany',
-    tags: ['autodocs'],
-    parameters: {
-        docs: {
-            description: {
-                component: 'German flag component with customizable colors and sizes.',
-            },
-        },
+  title: 'Flags/Germany',
+  component: 'flag-icon-germany',
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'German flag component with customizable colors and sizes.',
+      },
     },
-    argTypes: FlagArgTypes,
-    args: FlagArgs
+  },
+  argTypes: FlagArgTypes,
+  args: FlagArgs
 };
 
 export default meta;
@@ -27,91 +27,81 @@ type Story = StoryObj;
 
 // Standard German flag
 export const Default: Story = {
-    name: 'Standard Flag',
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => {
-        const heightStyle = responsive ? responsiveHeight || 'auto' : `${height}px`;
-        const widthStyle = responsive ? '100%' : `${width}px`;
+  args: {
+    width: 370,
+    height: 290,
+    responsive: false
+  },
 
-        return html`
-      <h1>Click or Hover the Flag</h1>
-      <flag-icon-germany
-        ${responsive ? '' : `width="${width}" height="${height}"`}
-        ${responsive ? 'class="responsive"' : ''}
-        style="
-                    ${responsive
-                ? `width: ${widthStyle}; max-width: 400px; height: ${heightStyle};`
-                : ''}
-                    --flag-color1: ${colorRed};
-                    --flag-color2: ${colorWhite};
-                    --flag-color3: ${colorBlue};
-                    --flag-color4: ${colorGreen};
-                    --flag-color5: ${colorYellow};
-                    --flag-color6: ${colorBlack};
-                    --flag-color7: ${colorOrange};
-                    --flag-color8: ${colorBrown};
-                    --flag-color9: ${colorPurple};
-                    --flag-color10: ${colorGray};
-                    --flag-color11: ${colorTurquoise};
-                    --flag-color12: ${colorSilver};
-                    --flag-color13: ${colorCopper};
-                "
+  name: 'Standard Flag',
+
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => {
+    const heightStyle = responsive ? responsiveHeight || 'auto' : `${height}px`;
+    const widthStyle = responsive ? '100%' : `${width}px`;
+
+    return html`
+      <flag-icon-germany 
+          style="display: block;
+                width: ${widthStyle};
+                height: ${heightStyle};"
+         width="${width}" height="${height}"
       ></flag-icon-germany>
     `;
-    },
+  }
 };
 
 // Small size variant
 export const Small: Story = {
-    name: 'Small Size',
-    args: {
-        responsive: false,
-        width: 120,
-        height: 80,
-    },
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => html`
+  name: 'Small Size',
+  args: {
+    responsive: false,
+    width: 120,
+    height: 80,
+  },
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => html`
     <flag-icon-germany
       ${responsive ? '' : `width="${width}" height="${height}"`}
       ${responsive ? 'class="responsive"' : ''}
       style="
                 ${responsive
-            ? `width: 100%; max-width: 120px; height: ${responsiveHeight};`
-            : ''}
+      ? `width: 100%; max-width: 120px; height: ${responsiveHeight};`
+      : ''}
                 --flag-color1: ${colorRed};
                 --flag-color2: ${colorWhite};
                 --flag-color3: ${colorBlue};
@@ -132,38 +122,38 @@ export const Small: Story = {
 
 // Large size variant1
 export const Large: Story = {
-    name: 'Large Size',
-    args: {
-        responsive: false,
-        width: 600,
-        height: 400,
-    },
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => html`
+  name: 'Large Size',
+  args: {
+    responsive: false,
+    width: 600,
+    height: 400,
+  },
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => html`
     <flag-icon-germany
       ${responsive ? '' : `width="${width}" height="${height}"`}
       ${responsive ? 'class="responsive"' : ''}
       style="
                 ${responsive
-            ? `width: 100%; max-width: 600px; height: ${responsiveHeight};`
-            : ''}
+      ? `width: 100%; max-width: 600px; height: ${responsiveHeight};`
+      : ''}
                 --flag-color1: ${colorRed};
                 --flag-color2: ${colorWhite};
                 --flag-color3: ${colorBlue};
@@ -184,26 +174,26 @@ export const Large: Story = {
 
 // Interactive variant with custom styling
 export const Interactive: Story = {
-    name: 'Interactive',
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => html`
+  name: 'Interactive',
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => html`
     <flag-icon-germany
       ${responsive ? '' : `width="${width}" height="${height}"`}
       class="interactive ${responsive ? 'responsive' : ''}"
@@ -211,8 +201,8 @@ export const Interactive: Story = {
                 cursor: pointer; 
                 transition: transform 0.2s;
                 ${responsive
-            ? `width: 100%; max-width: 300px; height: ${responsiveHeight};`
-            : ''}
+      ? `width: 100%; max-width: 300px; height: ${responsiveHeight};`
+      : ''}
                 --flag-color1: ${colorRed};
                 --flag-color2: ${colorWhite};
                 --flag-color3: ${colorBlue};
@@ -229,52 +219,52 @@ export const Interactive: Story = {
             "
       @click=${() => console.log('Flag clicked!')}
       @mouseover=${(e: Event) => {
-            (e.target as HTMLElement).style.transform = 'scale(1.05)';
-        }}
+      (e.target as HTMLElement).style.transform = 'scale(1.05)';
+    }}
       @mouseout=${(e: Event) => {
-            (e.target as HTMLElement).style.transform = 'scale(1)';
-        }}
+      (e.target as HTMLElement).style.transform = 'scale(1)';
+    }}
     ></flag-icon-germany>
   `,
 };
 
 // Custom colors with controls
 export const CustomColors: Story = {
-    name: 'Custom Colors',
-    args: {
-        responsive: false,
-        width: 400,
-        height: 267,
-        'color-red': '#1a1a1a',
-        'color-white': '#cc0000',
-        'color-blue': '#ffaa00',
-    },
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => html`
+  name: 'Custom Colors',
+  args: {
+    responsive: false,
+    width: 400,
+    height: 267,
+    'color-red': '#1a1a1a',
+    'color-white': '#cc0000',
+    'color-blue': '#ffaa00',
+  },
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => html`
     <flag-icon-germany
       ${responsive ? '' : `width="${width}" height="${height}"`}
       ${responsive ? 'class="responsive"' : ''}
       style="
                 ${responsive
-            ? `width: 100%; max-width: 400px; height: ${responsiveHeight};`
-            : ''}
+      ? `width: 100%; max-width: 400px; height: ${responsiveHeight};`
+      : ''}
                 --flag-color1: ${colorRed};
                 --flag-color2: ${colorWhite};
                 --flag-color3: ${colorBlue};
@@ -295,31 +285,31 @@ export const CustomColors: Story = {
 
 // Responsive showcase
 export const Responsive: Story = {
-    name: 'Responsive Showcase',
-    args: {
-        responsive: true,
-        responsiveHeight: '100%',
-    },
-    render: ({
-        responsive,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => {
-        const heightValue = responsiveHeight || 'auto';
+  name: 'Responsive Showcase',
+  args: {
+    responsive: true,
+    responsiveHeight: '100%',
+  },
+  render: ({
+    responsive,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => {
+    const heightValue = responsiveHeight || 'auto';
 
-        return html`
+    return html`
       <div style="padding: 20px;">
         <h3>Responsive Flag Demo</h3>
         <p>Current height mode: <strong>${heightValue}</strong></p>
@@ -352,13 +342,13 @@ export const Responsive: Story = {
         </p>
       </div>
     `;
-    },
+  },
 };
 
 // Multiple flags showcase
 export const Showcase: Story = {
-    name: 'Multiple Flags Showcase',
-    render: () => html`
+  name: 'Multiple Flags Showcase',
+  render: () => html`
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px;"
     >
@@ -398,44 +388,44 @@ export const Showcase: Story = {
 
 // 13-Color Demo
 export const EightColors: Story = {
-    name: '13-Color Demo',
-    args: {
-        responsive: false,
-        width: 400,
-        height: 300,
-        'color-red': '#FF0000',
-        'color-white': '#FFFFFF',
-        'color-blue': '#0000FF',
-        'color-green': '#00FF00',
-        'color-yellow': '#FFFF00',
-        'color-black': '#000000',
-        'color-orange': '#FFA500',
-        'color-brown': '#8B4513',
-        'color-purple': '#800080',
-        'color-gray': '#808080',
-        'color-turquoise': '#40E0D0',
-        'color-silver': '#C0C0C0',
-        'color-copper': '#B87333',
-    },
-    render: ({
-        responsive,
-        width,
-        height,
-        responsiveHeight,
-        'color-red': colorRed,
-        'color-white': colorWhite,
-        'color-blue': colorBlue,
-        'color-green': colorGreen,
-        'color-yellow': colorYellow,
-        'color-black': colorBlack,
-        'color-orange': colorOrange,
-        'color-brown': colorBrown,
-        'color-purple': colorPurple,
-        'color-gray': colorGray,
-        'color-turquoise': colorTurquoise,
-        'color-silver': colorSilver,
-        'color-copper': colorCopper,
-    }) => html`
+  name: '13-Color Demo',
+  args: {
+    responsive: false,
+    width: 400,
+    height: 300,
+    'color-red': '#FF0000',
+    'color-white': '#FFFFFF',
+    'color-blue': '#0000FF',
+    'color-green': '#00FF00',
+    'color-yellow': '#FFFF00',
+    'color-black': '#000000',
+    'color-orange': '#FFA500',
+    'color-brown': '#8B4513',
+    'color-purple': '#800080',
+    'color-gray': '#808080',
+    'color-turquoise': '#40E0D0',
+    'color-silver': '#C0C0C0',
+    'color-copper': '#B87333',
+  },
+  render: ({
+    responsive,
+    width,
+    height,
+    responsiveHeight,
+    'color-red': colorRed,
+    'color-white': colorWhite,
+    'color-blue': colorBlue,
+    'color-green': colorGreen,
+    'color-yellow': colorYellow,
+    'color-black': colorBlack,
+    'color-orange': colorOrange,
+    'color-brown': colorBrown,
+    'color-purple': colorPurple,
+    'color-gray': colorGray,
+    'color-turquoise': colorTurquoise,
+    'color-silver': colorSilver,
+    'color-copper': colorCopper,
+  }) => html`
         <div style="padding: 20px;">
             <h3>13-Color Flag Demo</h3>
             <p>This demo shows all 13 customizable colors:</p>
