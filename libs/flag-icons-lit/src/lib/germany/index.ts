@@ -33,75 +33,6 @@ export class FlagIconGermany extends LitElement {
         return this; // Rendert direkt ins Light DOM (Host-Element)
     }
 
-    static override styles = css`
-        :host {
-            display: inline-block;
-            width: var(--flag-width, 300px);
-            height: var(--flag-height, 200px);
-            border: var(--flag-border, none);
-            border-radius: var(--flag-border-radius, 0);
-            box-shadow: var(--flag-shadow, none);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        :host([responsive]) {
-            width: 100%;
-            height: auto;
-            max-width: var(--flag-max-width, 100%);
-            aspect-ratio: 5/3;
-        }
-
-        flag {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        flag svg {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Interactive states */
-        :host(.interactive) {
-            cursor: pointer;
-        }
-
-        :host(.interactive:hover) {
-            transform: scale(1.02);
-        }
-
-        :host(.interactive:active) {
-            transform: scale(0.98);
-        }
-
-        /* Animation support */
-        :host(.animated) {
-            animation: flagFadeIn 0.6s ease-in-out;
-        }
-
-        @keyframes flagFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            :host {
-                transition: none;
-                animation: none;
-            }
-        }
-    `;
 
     /**
      * Lifecycle method called after property updates
@@ -162,9 +93,7 @@ export class FlagIconGermany extends LitElement {
 
     override render() {
         return html`
-            <flag>
                 ${unsafeSVG(germanFlagSvg)}
-            </flag>
         `;
     }
 }

@@ -4,7 +4,7 @@
   "license": "MIT",
   "exports": {
     ".": "./src/index.ts",
-    "./styles": "./src/lib/scss/index.scss",
+    "./styles/core": "./src/lib/scss/flag-core.scss",
     "./flags": "./src/index.ts",
     "./flag/germany": "./src/lib/germany/index.ts"
   }

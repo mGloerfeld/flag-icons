@@ -4,6 +4,8 @@ import { html } from 'lit';
 // Import the German flag component
 import '../../../libs/flag-icons-lit/src/lib/germany/index.js';
 
+import '@globecruising/flag-icons-core/styles/core'
+
 // Import shared argTypes and args
 import { FlagArgTypes, FlagArgs } from './shared/german-arg-types';
 
@@ -58,12 +60,9 @@ export const Default: Story = {
     const widthStyle = responsive ? '100%' : `${width}px`;
 
     return html`
-      <flag-icon-germany 
-          style="display: block;
-                width: ${widthStyle};
-                height: ${heightStyle};"
-         width="${width}" height="${height}"
-      ></flag-icon-germany>
+ 
+
+      <flag-icon-germany class="fi"></flag-icon-germany>
     `;
   }
 };
